@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>test shit</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" th:src="@{js/main.js}" />
+    <script type="text/javascript" th:src="@{lib/jquery-3.1.1.min.js}" />
+	<link th:href="@{lib/bootstrap-3.3.7-dist/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>    
+    
+</head>
+<body>
+	<h1>index.html</h1>
+	<ul>
+		<li><a href="/sup">this is a asdf link</a></li>
+		<li><a onclick="fuck()">idk what this is gonna do yet</a></li>
+	</ul>
+	
+	<div class="container">
+		<input id="studentName" type="text" placeholder="Enter the Student's Name"/>
+		<input id="studentSubject" type="text" placeholder="Enter the Student's Subject"/>
+		<button onclick="addStudent()">Add Student</button>
+	</div>
+	
+</body>
+</html>
