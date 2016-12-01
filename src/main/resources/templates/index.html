@@ -11,12 +11,12 @@
     
 </head>
 <body>
-	<div class="jumbotron">
+	<div id="jumbotronDiv" class="jumbotron">
 		<h1 class="center">School of hard knocks!</h1>
 	</div>
 	
 	
-	<div>
+	<div id="tableDiv">
 		<table class="table table-striped">
 		<caption>Students</caption>
 			<tr>
@@ -30,11 +30,30 @@
 		</table>
 	</div>
 	
-	<div class="container outline">
-		<input id="studentName" type="text" placeholder="Enter the Student's Name"/>
-		<input id="studentSubject" type="text" placeholder="Enter the Student's Subject"/>
-		<button onclick="addStudent()">Add Student</button>
+	<div id="addStudentDiv" class="panel panel-default">
+		<div class="panel-heading">Add a Student</div>
+		<div class="panel-body">
+			<div id="validationDiv" class="alert alert-danger">
+				<strong>Please enter both name and subject!</strong>
+			</div>
+			<input id="studentName" type="text" placeholder="Enter the Student's Name"/>
+			<input id="studentSubject" type="text" placeholder="Enter the Student's Subject"/>
+		</div>
+		<div class="panel-footer">
+			<button onclick="addStudent()">Add Student</button>
+		</div>
 	</div>
+	
+	<nav class="navbar navbar-inverse">
+  		<div class="container-fluid">
+		    <ul class="nav navbar-nav">
+		      <li><a href="/">Home</a></li>
+		      <li><a href="/sup">sup</a></li>
+		      <li><a href="#">Page 2</a></li> 
+		      <li><a href="#">Page 3</a></li> 
+		    </ul>
+  		</div>
+	</nav>
 	
 </body>
 </html>

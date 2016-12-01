@@ -21,7 +21,7 @@ public class MyController {
 	@RequestMapping("/sup")
 	public String sup(@RequestParam(value="name", required=false, defaultValue="bitches")String name,
 			Model model){
-		model.addAttribute("studentId", "bitches");
+		model.addAttribute("studentId", name);
 		return "student";
 	}
 	

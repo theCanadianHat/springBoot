@@ -3,6 +3,16 @@ function fuck(){
 };
 
 function addStudent(){
-	$("#studentName");
-	$("#studentSubject");	
+	var $validation = $("#validationDiv");
+	$validation.hide();
+	var $studentName = $("#studentName");
+	var $studentSubject = $("#studentSubject");
+	
+	if($studentName.val() == "" || $studentSubject.val() == ""){
+		$validation.show();
+		return;
+	}
+	
+	
+	
 }
