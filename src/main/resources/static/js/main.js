@@ -1,29 +1,49 @@
-function fuck(){
-	return "fuck";
-};
+var context = window.location.protocol + "//" + window.location.host;
 
-function addStudent(){
-	var $validation = $("#validationDiv");
-	$validation.hide();
+var addStudent = function(){
+	var $validation = $("#addStudentValidationDiv");
 	var $studentName = $("#studentName");
 	var $studentSubject = $("#studentSubject");
 	
 	if($studentName.val() == "" || $studentSubject.val() == ""){
-		$validation.show();
+		$validation.removeClass("hidden");
+		$validation.attr("style","display: block");
 		return;
 	}else{
 		var newName = $studentName.val();
 		var newSubject = $studentSubject.val();
-		var newURL = window.location.protocol + "//" + window.location.host;
+				
+		$.ajax({
+			method: "GET",
+			url: context + "/addStudent",
+			data: {name: newName, subject: newSubject},
+			success: function(data){
+				window.location.reload(true);
+			},
+			error: function(data){
+				alert("ajax error method hit");
+			}
+		});
+	}	
+}
+
+var removeStudent = function(){
+	var $validation = $("#removeStudentValidationDiv");
+	var $studentId = $("#studentId");
+	
+	if($studentId.val() == ""){
+		$validation.removeClass("hidded");
+		$validation.attr("style","display: block");
+	}else{
+		var removeId = $studentId.val();
 		
 		$.ajax({
 			method: "GET",
-			url: newURL + "/addStudent",
-			data: {name: newName, subject: newSubject},
+			url: context + "/removeStudent",
+			data: {id: removeId},
 			success: function(){
 				window.location.reload(true);
 			}
 		});
 	}
-	
 }

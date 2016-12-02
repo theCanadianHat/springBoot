@@ -22,13 +22,6 @@ public class MyController {
 	@Autowired
 	private StudentService studentService;
 	
-	@RequestMapping("/sup")
-	public String sup(@RequestParam(value="name", required=false, defaultValue="bitches")String name,
-			Model model){
-		model.addAttribute("studentId", name);
-		return "student";
-	}
-	
 	@RequestMapping("/")
 	public String index(Model model){
 		HashMap<Long, Student> students = studentService.getAllStudents();
@@ -41,6 +34,12 @@ public class MyController {
 	public void addStudent(@RequestParam(value="name") String name, @RequestParam(value="subject") String subject, Model model,
 			HttpServletRequest request, HttpServletResponse response){
 		studentService.addStudent(name, subject);
+		this.index(model);
+	}
+	
+	@RequestMapping("/removeStudent")
+	public void removeStudent(@RequestParam(value="id")String id, Model model, HttpServletRequest request, HttpServletResponse response){
+		studentService.removeStudent(id);
 		this.index(model);
 	}
 }
