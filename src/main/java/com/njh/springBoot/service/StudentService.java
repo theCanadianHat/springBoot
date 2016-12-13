@@ -51,4 +51,8 @@ public class StudentService {
 		   model.addAttribute("studentId", id);
 	      return "student";
 	   }
+	   
+	   public void removeStudent(String id){
+		   Application.hmStudent.remove(Long.valueOf(id));
+	   }
 }
