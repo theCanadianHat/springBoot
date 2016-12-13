@@ -19,7 +19,6 @@
 		<h1 class="center">School of hard knocks!</h1>
 	</div>
 	
-<<<<<<< HEAD
 	<div ng-app="studentApp" ng-controller="StudentController">
 		<span my-directive='blah'></span>
 	</div>
@@ -28,10 +27,12 @@
 		<table class="table table-striped">
 		<caption>Students</caption>
 			<tr>
+				<th>Id</th>
 				<th>Name</th>
 				<th>Subject</th>
 			</tr>
 			<tr th:each="student : ${students}">
+				<td th:text="${student.value.id}" />
 				<td th:text="${student.value.name}"/>
 				<td th:text="${student.value.subject}"/>				
 			</tr>
@@ -64,3 +65,5 @@
 			<button onclick="removeStudent()">Remove Student</button>
 		</div>
 	</div>
+</body>
+</html>
