@@ -52,52 +52,7 @@
 		</div>
 	</div>
 	
-=======
->>>>>>> refs/remotes/origin/master
-	<nav class="navbar navbar-inverse">
-  		<div class="container-fluid">
-		    <ul class="nav navbar-nav">
-		      <li><a href="/">Home</a></li>
-		      <li><a href="/sup">sup</a></li>
-		      <li><a href="#">Page 2</a></li> 
-		      <li><a href="#">Page 3</a></li> 
-		    </ul>
-  		</div>
-	</nav>
-	
-	<div id="tableDiv">
-		<table class="table table-striped">
-		<caption>Students</caption>
-			<tr>
-				<th>Id</th>
-				<th>Name</th>
-				<th>Subject</th>
-			</tr>
-			<tr th:each="student : ${students}">
-				<td th:text="${student.value.id}" />
-				<td th:text="${student.value.name}"/>
-				<td th:text="${student.value.subject}"/>				
-			</tr>
-		</table>
-	</div>
-	
-	<hr/>
-	
-	<div id="addStudentDiv" class="panel panel-default">
-		<div class="panel-heading">Add a Student</div>
-		<div class="panel-body">
-			<div id="addStudentValidationDiv" class="hidden alert alert-danger">
-				<strong>Please enter both name and subject!</strong>
-			</div>
-			<input id="studentName" type="text" placeholder="Enter the Student's Name"/>
-			<input id="studentSubject" type="text" placeholder="Enter the Student's Subject"/>
-		</div>
-		<div class="panel-footer">
-			<button onclick="addStudent()">Add Student</button>
-		</div>
-	</div>
-	
-	<div id="removeStudentDiv" class="panel panel-default">
+		<div id="removeStudentDiv" class="panel panel-default">
 		<div class="panel-heading">Remove a Student</div>
 		<div class="panel-body">
 			<div id="removeStudentValidationDiv" class="hidden alert alert-danger">
@@ -109,6 +64,3 @@
 			<button onclick="removeStudent()">Remove Student</button>
 		</div>
 	</div>
-	
-</body>
-</html>
