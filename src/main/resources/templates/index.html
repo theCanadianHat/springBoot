@@ -5,9 +5,13 @@
 	
     <title>Messing around with Spring Boot</title> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script type="text/javascript" th:src="@{js/main.js}" />
+
     <script type="text/javascript" th:src="@{lib/jquery-3.1.1.min.js}" />
+    <script type="text/javascript" th:src="@{lib/angular.min.js}" />    
 	<link th:href="@{lib/bootstrap-3.3.7-dist/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>    
+	
+    <script type="text/javascript" th:src="@{js/main.js}" />
+    <script type="text/javascript" th:src="@{js/studentApp.js}" />
     
 </head>
 <body>
@@ -15,6 +19,9 @@
 		<h1 class="center">School of hard knocks!</h1>
 	</div>
 	
+	<div ng-app="studentApp" ng-controller="StudentController">
+		<span my-directive='blah'></span>
+	</div>
 	
 	<div id="tableDiv">
 		<table class="table table-striped">
